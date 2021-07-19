@@ -52,14 +52,14 @@ public class RobotService {
 
 		if (robotPositionRow < irrigationPositionRow) {
 			move = Math.abs(robotPositionRow - irrigationPositionRow);
-			directions.add(Util.Noth(direction.toUpperCase()));
+			directions.add(Util.toNoth(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
 			direction = "N";
 		} else if (robotPositionRow > irrigationPositionRow) {
 			move = Math.abs(robotPositionRow - irrigationPositionRow);
-			directions.add(Util.South(direction.toUpperCase()));
+			directions.add(Util.toSouth(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
@@ -68,14 +68,14 @@ public class RobotService {
 
 		if (robotPositionColumn < irrigationPositionColumn) {
 			move = Math.abs(robotPositionColumn - irrigationPositionColumn);
-			directions.add(Util.East(direction.toUpperCase()));
+			directions.add(Util.toEast(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
 			direction = "L";
 		} else if (robotPositionColumn > irrigationPositionColumn) {
 			move = Math.abs(robotPositionColumn - irrigationPositionColumn);
-			directions.add(Util.West(direction.toUpperCase()));
+			directions.add(Util.toWest(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}

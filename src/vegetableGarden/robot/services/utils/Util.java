@@ -3,7 +3,7 @@ package vegetableGarden.robot.services.utils;
 public class Util {
 
 	
-	public static String Noth(String dir) {
+	public static String toNoth(String dir) {
 		String direction;
 		switch (dir) {
 		case "L":
@@ -21,7 +21,7 @@ public class Util {
 		return direction;
 	}
 	
-	public static String South(String dir) {
+	public static String toSouth(String dir) {
 		String direction;
 		switch (dir) {
 		case "L":
@@ -39,7 +39,7 @@ public class Util {
 		return direction;
 	}
 	
-	public static String East(String dir) {
+	public static String toEast(String dir) {
 		String direction;
 		switch (dir) {
 		case "N":
@@ -57,7 +57,7 @@ public class Util {
 		return direction;
 	}
 	
-	public static String West(String dir) {
+	public static String toWest(String dir) {
 		String direction;
 		switch (dir) {
 		case "L":
