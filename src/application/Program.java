@@ -68,8 +68,9 @@ public class Program {
 				System.out.print("X: ");
 				x = sc.nextInt();
 				sc.nextLine();
-				
-				if (y.intValue() < vegetableGarden.getVegetableGardenSizeRow() && y > 0 && x.intValue() < vegetableGarden.getVegetableGardenSizeColumn() && x > 0) {
+
+				if (y.intValue() < vegetableGarden.getVegetableGardenSizeRow() && y > 0
+						&& x.intValue() < vegetableGarden.getVegetableGardenSizeColumn() && x > 0) {
 					robot.setPositionRow(y);
 					robot.setPositionColumn(x);
 					stop = false;
@@ -83,60 +84,56 @@ public class Program {
 				sc.nextLine();
 			}
 		} while (stop);
-		
+
 		System.out.println();
 		Irrigation irrigation = new Irrigation();
-		
+
 		do {
 			stop = true;
 			try {
 				System.out.println();
 				System.out.print("Quantidade de canteiro para irrigação: ");
 				int quantity = sc.nextInt();
-				
-				if(quantity < vegetableGarden.getVegetableGardenSizeRow() * vegetableGarden.getVegetableGardenSizeColumn()) {
-					Integer[][] irrigationPosition = new Integer[quantity][2];
-					
-					System.out.println();
-					System.out.println("Posição das horas para irrigação");
-					
-					for(int i = 0; i < quantity; i++) {
-						
-						System.out.println("Hora "+(i+1)+" de "+(quantity));
-						System.out.print("Y: ");
-						int auxY = sc.nextInt();
-						sc.nextLine();
-						System.out.print("X: ");
-						int auxX = sc.nextInt();
-						sc.nextLine();
-						
-						if(auxY < vegetableGarden.getVegetableGardenSizeRow() && auxX < vegetableGarden.getVegetableGardenSizeColumn()) {
-							irrigationPosition[i][0] = auxY;
-							irrigationPosition[i][1] = auxX;
-							robot.irrigation(irrigationPosition[i][0], irrigationPosition[i][1]);	
-						} else {
-							i -= 1;
-							System.out.println("Fora dos limites da horta");
-							System.out.println();
-						}
+
+				Integer[][] irrigationPosition = new Integer[quantity][2];
+
+				System.out.println();
+				System.out.println("Posição das horas para irrigação");
+
+				for (int i = 0; i < quantity; i++) {
+
+					System.out.println("Hora " + (i + 1) + " de " + (quantity));
+					System.out.print("Y: ");
+					int auxY = sc.nextInt();
+					sc.nextLine();
+					System.out.print("X: ");
+					int auxX = sc.nextInt();
+					sc.nextLine();
+
+					if (auxY < vegetableGarden.getVegetableGardenSizeRow()
+							&& auxX < vegetableGarden.getVegetableGardenSizeColumn()) {
+						irrigationPosition[i][0] = auxY;
+						irrigationPosition[i][1] = auxX;
+						robot.irrigation(irrigationPosition[i][0], irrigationPosition[i][1]);
+					} else {
+						i -= 1;
+						System.out.println("Fora dos limites da horta");
+						System.out.println();
 					}
-					irrigation.setIrrigationPosition(irrigationPosition);
-					stop = false;
 				}
-				else {
-					System.out.println("Quantidade de canteiro superior ao tamanho da horta!");
-				}
-				
-			} catch(InputMismatchException e) {
+				irrigation.setIrrigationPosition(irrigationPosition);
+				stop = false;
+
+			} catch (InputMismatchException e) {
 				System.out.println("Somente números!");
 				System.out.println();
 				sc.nextLine();
 			}
-			
-		} while(stop);
-		
+
+		} while (stop);
+
 		System.out.println();
-		
+
 		UI.printVegetableGarden(vegetableGarden, robot, irrigation);
 		sc.close();
 	}
