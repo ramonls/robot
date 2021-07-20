@@ -3,8 +3,6 @@ package vegetableGarden.robot.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import vegetableGarden.robot.services.utils.Util;
-
 public class RobotService {
 
 	List<String> directions = new ArrayList<>();
@@ -52,14 +50,14 @@ public class RobotService {
 
 		if (robotPositionRow < irrigationPositionRow) {
 			move = Math.abs(robotPositionRow - irrigationPositionRow);
-			directions.add(Util.toNoth(direction.toUpperCase()));
+			directions.add(CardinalPoints.toNoth(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
 			direction = "N";
 		} else if (robotPositionRow > irrigationPositionRow) {
 			move = Math.abs(robotPositionRow - irrigationPositionRow);
-			directions.add(Util.toSouth(direction.toUpperCase()));
+			directions.add(CardinalPoints.toSouth(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
@@ -68,14 +66,14 @@ public class RobotService {
 
 		if (robotPositionColumn < irrigationPositionColumn) {
 			move = Math.abs(robotPositionColumn - irrigationPositionColumn);
-			directions.add(Util.toEast(direction.toUpperCase()));
+			directions.add(CardinalPoints.toEast(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}
 			direction = "L";
 		} else if (robotPositionColumn > irrigationPositionColumn) {
 			move = Math.abs(robotPositionColumn - irrigationPositionColumn);
-			directions.add(Util.toWest(direction.toUpperCase()));
+			directions.add(CardinalPoints.toWest(direction.toUpperCase()));
 			for (int i = 0; i < move; i++) {
 				directions.add("M ");
 			}

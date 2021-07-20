@@ -1,6 +1,6 @@
-package vegetableGarden.robot.services.utils;
+package vegetableGarden.robot.services;
 
-public class Util {
+public class CardinalPoints {
 
 	
 	public static String toNoth(String dir) {
