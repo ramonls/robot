@@ -69,8 +69,7 @@ public class Program {
 				x = sc.nextInt();
 				sc.nextLine();
 
-				if (y.intValue() < vegetableGarden.getVegetableGardenSizeRow() && y > 0
-						&& x.intValue() < vegetableGarden.getVegetableGardenSizeColumn() && x > 0) {
+				if (y.intValue() < vegetableGarden.getVegetableGardenSizeRow() && y >= 0 && x.intValue() < vegetableGarden.getVegetableGardenSizeColumn() && x >= 0) {
 					robot.setPositionRow(y);
 					robot.setPositionColumn(x);
 					stop = false;

@@ -42,8 +42,7 @@ public class RobotService {
 		return direction;
 	}
 
-	public void irrigationSteps(int robotPositionRow, int robotPositionColumn, String dir, int irrigationPositionRow,
-			int irrigationPositionColumn) {
+	public void irrigationSteps(int robotPositionRow, int robotPositionColumn, String dir, int irrigationPositionRow, int irrigationPositionColumn) {
 
 		direction = dir;
 		int move = 0;

@@ -17,7 +17,8 @@ public class UI {
 				if (j == 0) {
 					if (row > 10) {
 						System.out.print("     +------+");
-					} else {
+					} 
+					else {
 						System.out.print("     +------+");
 					}
 				} else {
