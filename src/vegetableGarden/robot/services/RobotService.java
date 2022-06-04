@@ -54,6 +54,7 @@ public class RobotService {
 				directions.add("M ");
 			}
 			direction = "N";
+
 		} else if (robotPositionRow > irrigationPositionRow) {
 			move = Math.abs(robotPositionRow - irrigationPositionRow);
 			directions.add(CardinalPoints.toSouth(direction.toUpperCase()));
@@ -70,6 +71,7 @@ public class RobotService {
 				directions.add("M ");
 			}
 			direction = "L";
+			
 		} else if (robotPositionColumn > irrigationPositionColumn) {
 			move = Math.abs(robotPositionColumn - irrigationPositionColumn);
 			directions.add(CardinalPoints.toWest(direction.toUpperCase()));
