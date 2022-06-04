@@ -14,7 +14,6 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 		boolean stop = false;
-
 		Integer x = 0;
 		Integer y = 0;
 		String direction;
@@ -97,11 +96,11 @@ public class Program {
 				Integer[][] irrigationPosition = new Integer[quantity][2];
 
 				System.out.println();
-				System.out.println("Posição das horas para irrigação");
+				System.out.println("Posição das hortas para irrigação");
 
 				for (int i = 0; i < quantity; i++) {
 
-					System.out.println("Hora " + (i + 1) + " de " + (quantity));
+					System.out.println("Horta " + (i + 1) + " de " + (quantity));
 					System.out.print("Y: ");
 					int auxY = sc.nextInt();
 					sc.nextLine();
